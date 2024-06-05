@@ -1,0 +1,64 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  doc:
+    swagger-ui:
+      path: /swagger-ui.html
+    packagesToScan: ua.flowerista.shop.controllers
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${GMAIL_USERNAME}
+    password: ${GMAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+        debug: true
+  data:
+    redis:
+      url: ${UPSTASH_REDIS_URL}
+#cache refresh time 5 seconds - in CacheService.class
+cloudinary:
+  url: ${CLOUDINARY_URL}
+
+security:
+  jwt:
+    secret-key: ${JWT_SECRET_KEY}
+    # 15 minutes access token expiration default
+    expiration: ${JWT_AT_EXPIRATION:900000}
+    # 24 hours refresh token expiration default
+    refresh-token:
+      expiration: ${JWT_RT_EXPIRATION:86400000}
+    cookie:
+      # 24 hours cookie expiration on default
+      expiration: ${JWT_COOKIE_EXPIRATION:86400000}
+
+paypal:
+  mode: sandbox
+  client:
+    id: ${PAYPAL_CLIENT_ID}
+    secret: ${PAYPAL_SECRET}
+
+frontend:
+  server:
+    url: ${FRONTEND_SERVER_URL}
+
+mapstruct:
+  defaultComponentModel: spring
