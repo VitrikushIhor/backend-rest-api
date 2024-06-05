@@ -23,6 +23,10 @@ public interface BouquetRepository extends JpaRepository<Bouquet, Integer>, Quer
         bindings.bind(String.class).first((SingleValueBinding<StringPath, String>) (path, s) -> path.containsIgnoreCase(s));
     }
 
+    @Cacheable("bouquets")
+    @Query("SELECT b FROM Bouquet b")
+    List<Bouquet> findAllCached();
+
     @Cacheable("bouquetsTop5BySoldQuantity")
     @Query("SELECT b FROM Bouquet b ORDER BY b.soldQuantity DESC limit 5")
     List<Bouquet> findTop5ByOrderBySoldQuantityDesc();
