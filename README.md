@@ -6,14 +6,13 @@ Flowerista is a Spring Boot application serving as a backend service for a flowe
 
 - **CRUD Operations**: Handles Create, Read, Update, and Delete operations for entities like Bouquet, Flower, and Color.
 - **Image Handling**: Manages bouquet images, including uploading to Cloudinary and deleting images.
-- **Search Functionality**: Provides search functionality for bouquets.
+- **Search Functionality**: Provides search functionality for bouquets using text-search in table with translatiions.
 - **Stock Management**: Manages bouquet stock, including checking availability and updating stock based on orders.
 - **Email Functionality**: Implemented using Spring Mail.
 - **Security Features**: Uses JWT with refresh token rotation for authentication and Redis as storage for tokens.
 - **API Documentation**: Provided through Swagger UI.
 - **Complex Queries**: Handled using QueryDSL and native sql query.
-- **Object Mapping**: Handled using MapStruct.
-- **Boilerplate Code Reduction**: Achieved through the use of Lombok.
+- **Boilerplate Code Reduction**: Achieved through the use of Lombok and MapStruct.
 - **Payment Processing**: Handled using the PayPal SDK.
 - **Server-side Java Template Engine**: Implemented using Thymeleaf.
 - **Caching**: Implemented using Spring cache with refreshing on period of time.
@@ -22,10 +21,10 @@ Flowerista is a Spring Boot application serving as a backend service for a flowe
 ## Technologies Used
 
 - Java
-- JavaScript
 - Spring Boot
 - JWT
 - Redis
 - Postgres
 - SQL
 - Maven
+- MapStruct
