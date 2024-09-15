@@ -69,7 +69,7 @@ public class SecurityConfig {
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration cors = new CorsConfiguration();
-        cors.setAllowedOrigins(List.of("https://flowerista-frontend.vercel.app", "http://localhost:3000"));
+        cors.setAllowedOrigins(List.of("https://flowerista-frontend.vercel.app", "http://localhost:3000", "https://flowerista.vercel.app"));
         cors.setAllowedMethods(List.of("GET", "POST", "DELETE", "PATCH", "PUT", "OPTIONS"));
         cors.setAllowedHeaders(List.of("Content-Type", "Authorization", "Access-Control-Allow-Headers", "Access-Control-Allow-Origin"));
 		cors.setAllowCredentials(true);
